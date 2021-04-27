@@ -9,6 +9,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Map;
 
+/**
+ * 依赖查找示例
+ */
 public class DependencyLookupDemo {
 
     public static void main(String[] args) {
