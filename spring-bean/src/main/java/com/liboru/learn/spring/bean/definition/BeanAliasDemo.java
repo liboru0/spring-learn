@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanAliasDemo {
 
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-definition-context.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/META-INF/bean-definition-context.xml");
         User userZhang = applicationContext.getBean("zhangsan-user", User.class);
         System.out.println(userZhang);
         User user = applicationContext.getBean("user", User.class);
