@@ -1,11 +1,13 @@
 package com.liboru.learn.spring.bean.domain;
 
 import com.liboru.learn.spring.ioc.overview.domain.User;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
-public class People implements InitializingBean {
+public class People implements InitializingBean, DisposableBean {
 
     private Long id;
 
@@ -54,8 +56,23 @@ public class People implements InitializingBean {
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         this.name = "lisi";
         System.out.println("People afterPropertiesSet...");
     }
+
+    @PreDestroy
+    public void preDestroy(){
+        System.out.println("People preDestroy...");
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("People destroy...");
+    }
+
+    public void myDestroy() {
+        System.out.println("People myDestroy...");
+    }
+
 }
