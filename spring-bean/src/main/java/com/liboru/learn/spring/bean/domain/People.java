@@ -75,4 +75,9 @@ public class People implements InitializingBean, DisposableBean {
         System.out.println("People myDestroy...");
     }
 
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("people finalize...");
+    }
 }
