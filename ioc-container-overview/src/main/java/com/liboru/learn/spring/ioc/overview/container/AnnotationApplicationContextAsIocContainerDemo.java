@@ -4,18 +4,16 @@ import com.liboru.learn.spring.ioc.overview.domain.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
 
-@Configuration
 public class AnnotationApplicationContextAsIocContainerDemo {
 
     public static void main(String[] args) {
         // 创建 ApplicationContext 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 将当前类作为配置类
-        applicationContext.register(AnnotationApplicationContextAsIocContainerDemo.class);
+        applicationContext.register(Config.class);
         // 启动应用上下文
         applicationContext.refresh();
 
@@ -26,12 +24,14 @@ public class AnnotationApplicationContextAsIocContainerDemo {
 
     }
 
-    @Bean
-    public User user(){
-        User user = new User();
-        user.setId(1L);
-        user.setName("Ming");
-        return user;
+    public static class Config{
+        @Bean
+        public User user(){
+            User user = new User();
+            user.setId(1L);
+            user.setName("Ming");
+            return user;
+        }
     }
 
     private static void lookupCollectionTypeByType(ApplicationContext applicationContext) {
