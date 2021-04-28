@@ -21,6 +21,9 @@ public class AnnotationApplicationContextAsIocContainerDemo {
 
         lookupCollectionTypeByType(applicationContext);
 
+        // 关闭应用上下文
+        applicationContext.close();
+
     }
 
     @Bean
