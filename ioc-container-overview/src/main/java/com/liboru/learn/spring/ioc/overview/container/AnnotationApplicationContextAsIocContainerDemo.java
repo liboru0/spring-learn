@@ -9,13 +9,13 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Map;
 
 @Configuration
-public class AnnotationApplicationAsIocContainerDemo {
+public class AnnotationApplicationContextAsIocContainerDemo {
 
     public static void main(String[] args) {
         // 创建 ApplicationContext 容器
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 将当前类作为配置类
-        applicationContext.register(AnnotationApplicationAsIocContainerDemo.class);
+        applicationContext.register(AnnotationApplicationContextAsIocContainerDemo.class);
         // 启动应用上下文
         applicationContext.refresh();
 
