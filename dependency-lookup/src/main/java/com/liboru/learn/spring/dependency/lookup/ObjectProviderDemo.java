@@ -6,8 +6,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 
-import java.util.Iterator;
-
 public class ObjectProviderDemo {
 
     public static void main(String[] args) {
