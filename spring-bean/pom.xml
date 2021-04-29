@@ -13,11 +13,6 @@
     <description>Spring Bean 基础</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
-
         <!-- 复用 ioc-container-overview -->
         <dependency>
             <groupId>${groupId}</groupId>
